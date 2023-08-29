@@ -2,18 +2,14 @@
 
 #include <iostream>
 
-
 int main() {
-
-
-    
     Vector<int> v;
-
+    
     v.PushBack(19);
     v.PushBack(34);
     v.PushBack(787);
     Vector<int> v2 = std::move(v);
-
+    
     v2.PrintVector();
 
     Vector<int> v3;
@@ -22,8 +18,6 @@ int main() {
     v4 = std::move(v3);
 
     v4.PrintVector();
-
-
     /*
     v.PrintVector();
     v.PushBack(10);
@@ -31,7 +25,6 @@ int main() {
     std::cout << v.PopBack() << std::endl;
     v.PrintVector();
     */
-
     return 0;
 }
 
