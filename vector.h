@@ -26,14 +26,14 @@ private:
     T* m_arr;
 };
 
-template<typename T>
-Vector<T>::Vector() {
+template <typename T>
+Vector <T>::Vector() {
     m_size = 0;
     m_capacity = 1;
     m_arr = new T[m_capacity];
 } 
 
-template<typename T>
+template <typename T>
 Vector <T>::Vector(int s, int c, T* arr)
     : m_size(s), m_capacity(c), m_arr(new T[m_capacity])
 {
@@ -42,8 +42,8 @@ Vector <T>::Vector(int s, int c, T* arr)
     }
 }
 
-template<typename T>
-Vector<T>::Vector(Vector<T>& other)
+template <typename T>
+Vector <T>::Vector(Vector<T>& other)
 
     : m_arr(new T[m_capacity]),
       m_size(other.m_size),
@@ -56,7 +56,7 @@ Vector<T>::Vector(Vector<T>& other)
 }
 
 
-template<typename T>
+template <typename T>
 Vector <T>::Vector(Vector<T>&& other)
     : m_arr(new T[m_capacity]),
       m_size(other.m_size),
@@ -71,7 +71,7 @@ Vector <T>::Vector(Vector<T>&& other)
     other.m_size = other.m_capacity = 0;
 }   
 
-template<typename T>
+template <typename T>
 Vector<T>& Vector <T>::operator =(Vector<T>&& other) {
     
         delete[] m_arr;
@@ -89,7 +89,7 @@ Vector<T>& Vector <T>::operator =(Vector<T>&& other) {
 }
 
 
-template<typename T>
+template <typename T>
 void Vector <T>::PushBack(const T& element) {
     ++m_size;
     if (m_size > m_capacity) {
@@ -159,7 +159,7 @@ void Vector <T>::PrintVector() {
     }
 }
 
-template<typename T>
+template <typename T>
 Vector <T>::~Vector() {
     delete[] m_arr;
 }
