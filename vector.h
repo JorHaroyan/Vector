@@ -58,13 +58,10 @@ Vector <T>::Vector(Vector<T>& other)
 
 template <typename T>
 Vector <T>::Vector(Vector<T>&& other)
-    : m_arr(new T[m_capacity]),
+    : m_arr(other.m_arr),
       m_size(other.m_size),
       m_capacity(other.m_capacity)
-{
-    for (size_t i = 0; i < m_size; ++i) {
-        m_arr[i] = other.m_arr[i];
-    }
+
 
     std::cout << "move ctor" << std::endl;
     other.m_arr = nullptr;
