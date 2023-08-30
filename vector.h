@@ -73,14 +73,10 @@ Vector<T>& Vector <T>::operator =(Vector<T>&& other) {
     
         delete[] m_arr;
         m_size = other.m_size;
-        m_arr = new T[m_capacity];
-        
-        for (size_t i = 0; i < m_size; ++i) {
-            m_arr[i] = other.m_arr[i];
-        }
-      
+        m_arr = other.m_arr;    
         m_capacity = other.m_capacity;
         other.m_arr = nullptr;
+        std::cout << "move assignment" << std::endl;
     
     return *this;
 }
